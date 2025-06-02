@@ -53,15 +53,3 @@ jobs:
             ${{ vars.MO_IMAGE_NAME__MAIN }}:latest
           build-args: |
             VERSION=${{ env.VERSION }}
-      - id: releaseWithMogenius-69b4dfadf9752e244261
-        name: Release with mogenius
-        uses: mogenius/mogenius-release-action@v1
-        with:
-          dev: true
-          image: ${{ vars.MO_IMAGE_NAME__MAIN }}:${{ env.VERSION }}
-          kind: Deployment
-          namespace: default
-          resourceName: xxxhelm1
-          containerName: xxxhelm1
-          keyKind: ${{ vars.MO_API_KIND__MAIN }}
-          token: ${{ secrets.MO_API_TOKEN__69b4dfadf9752e244261__MAIN }}
